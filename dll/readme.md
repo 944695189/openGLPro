@@ -1,0 +1,1 @@
+在运行项目后将assimp-vc143-mtd.dll置于项目生成的debug中

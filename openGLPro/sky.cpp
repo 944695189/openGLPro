@@ -9,12 +9,12 @@ using std::endl;
 GLuint Utils::loadCubeMap(const char* mapDir)
 {
 	GLuint textureRef;
-	string xp = mapDir; xp = xp + "/posx.jpg";
-	string xn = mapDir; xn = xn + "/negx.jpg";
-	string yp = mapDir; yp = yp + "/posy.jpg";
-	string yn = mapDir; yn = yn + "/negy.jpg";
-	string zp = mapDir; zp = zp + "/posz.jpg";
-	string zn = mapDir; zn = zn + "/negz.jpg";
+	string xp = mapDir; xp = xp + "/xp.jpg";
+	string xn = mapDir; xn = xn + "/xn.jpg";
+	string yp = mapDir; yp = yp + "/yp.jpg";
+	string yn = mapDir; yn = yn + "/yn.jpg";
+	string zp = mapDir; zp = zp + "/zp.jpg";
+	string zn = mapDir; zn = zn + "/zn.jpg";
 	/*string xp = mapDir; xp = xp + "/right.jpg";
 	string xn = mapDir; xn = xn + "/left.jpg";
 	string yp = mapDir; yp = yp + "/top.jpg";

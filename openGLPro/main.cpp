@@ -172,12 +172,12 @@ void init(GLFWwindow* window) {
 
 	rProgramSky.shader("shader/vShaderCube.vs", "shader/fShaderCube.fs");
 	initVertices();
-	skyboxTexture = Utils::loadCubeMap("cubeMap/skybox3");
+	skyboxTexture = Utils::loadCubeMap("asset/cubeMap");
 	sphere.InitData(radius);
 	sphere.LoadShader("shader/tplight.vs", "shader/tplight.fs");
-	sphere.SetTexture(Utils::loadTexture("Textures/1712417437099.jpg"));
+	sphere.SetTexture(Utils::loadTexture("asset/Textures/1662781130306.jpeg"));
 	tmodel.initshader("shader/tplight.vs", "shader/tplight.fs");
-	tmodel.initmodel("AmberDoll/Doll.pmx");
+	tmodel.initmodel("asset/AmberDoll/Doll.fbx");
 }
 
 
