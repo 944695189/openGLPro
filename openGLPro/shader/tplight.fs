@@ -9,7 +9,7 @@ out vec4 FragColor;
 uniform vec3 Ka; // Ambient reflectivity
 uniform vec3 Kd; // Diffuse reflectivity
 uniform vec3 Ks; // Specular reflectivity
-uniform int shiness;//高光系数
+uniform int shiness;//锟竭癸拷系锟斤拷
 
 uniform vec3 lightColor;
 uniform vec3 lightPos;
@@ -31,7 +31,7 @@ void main()
     // specular
     //  float specularStrength = 1.0; 
     vec3 viewDir = normalize(viewPos - Position);
-    vec3 reflectDir = reflect(-lightDir, norm);  //反射光向量
+    vec3 reflectDir = reflect(-lightDir, norm);  
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), shiness);
     vec3 specular =Ks*lightColor * spec * vec3(texture(text, TexCoords));      //Ks
     vec3 Color = ambient +  diffuse + specular;//    

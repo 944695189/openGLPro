@@ -177,7 +177,7 @@ void init(GLFWwindow* window) {
 	sphere.LoadShader("shader/tplight.vs", "shader/tplight.fs");
 	sphere.SetTexture(Utils::loadTexture("asset/Textures/1662781130306.jpeg"));
 	tmodel.initshader("shader/tplight.vs", "shader/tplight.fs");
-	tmodel.initmodel("asset/AmberDoll/Doll.fbx");
+	tmodel.initmodel("asset/AmberDoll/Doll.pmx");
 }
 
 
