@@ -188,10 +188,13 @@ void display(GLFWwindow* window, double currentTime) {
 	//glm::perspective用于创建投影矩阵,用于将三维场景投影到二维视图上
 	sphere.projectionMat = pMat;
 	//vMat = mat4(1.0f);
+	sphere.viewMat = glm::lookAt(pos, at, glm::vec3(.0f, 1.0f, .0f));
+	//glm::lookAt(eye, center, up);eye 表示摄像机所在位置，center 表示摄像机要看向的中心点的位置，up 表示摄像机的三个方位向量中的up向量。
 	//vMat= glm::lookAt(pos, at, glm::vec3(1.0f, 1.0f, 1.0f));
-	vMat = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, cameraHeight, Zpos))
+	vMat = sphere.viewMat;
+	/*vMat = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, cameraHeight, Zpos))
 	     *glm::rotate(glm::mat4(1.0f), static_cast<float>DEG2RAD(cameraHorizontal), glm::vec3(.0f, 1.0f, .0f))
-		*glm::rotate(glm::mat4(1.0f),static_cast<float>DEG2RAD(cameraVertial),glm::vec3(1.0f,0.0f,.0f));
+		*glm::rotate(glm::mat4(1.0f),static_cast<float>DEG2RAD(cameraVertial),glm::vec3(1.0f,0.0f,.0f));*/
 	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -202,12 +205,12 @@ void display(GLFWwindow* window, double currentTime) {
 	glDisable(GL_DEPTH_TEST);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 
-	for (int i = 0; i < 3; i++)
+	/*for (int i = 0; i < 3; i++)
 	{
 		at[i] = pos[i] - headdir[i];
-	}
+	}*/
 	
-		sphere.viewMat = glm::lookAt(pos, at, glm::vec3(.0f, 1.0f, .0f));
+		
 		// 设置多边形填充模式
 		if (rendermode == 1)
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
