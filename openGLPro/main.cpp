@@ -131,7 +131,6 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 	}
 }
 void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) {
-	//if (action == GLFW_PRESS || action == GLFW_REPEAT) {
 	switch (key) {
 	case GLFW_KEY_W:
 		// 前移
@@ -487,14 +486,13 @@ void display(GLFWwindow* window, double currentTime) {
 //}
 
 int main(void) {
-	if (!glfwInit()) { exit(EXIT_FAILURE); }//初始化glfw
+	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	
 	GLFWwindow* window = glfwCreateWindow(1300,800, "Skyboxandmodel", NULL, NULL);
-	glfwMakeContextCurrent(window);//将window设置为opengl上下文，即opengl在这里绘图
+	glfwMakeContextCurrent(window);
 	//glfwSetFramebufferSizeCallback(window, size);//窗口大小变化
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
-	glfwSwapInterval(1);//用于设置垂直同步
-	//参数 1 表示打开垂直同步，意味着图形帧缓冲的刷新率将与显示器的垂直刷新率同步。这通常被用来避免屏幕撕裂(Tearing)，提升图形渲染的质量。
+	glfwSwapInterval(1);
 	
 	init(window);
 	
@@ -502,14 +500,12 @@ int main(void) {
 	
 	glfwSetCursorPosCallback(window, mouse_callback);//光标位置监听
 	glfwSetKeyCallback(window, keyboard);
-	while (!glfwWindowShouldClose(window)) {//窗口关闭则推出循环
+	while (!glfwWindowShouldClose(window)) {
 		
 		display(window, glfwGetTime());
 
 		glfwSwapBuffers(window);//双缓冲模式避免闪烁、不完整
 		glfwPollEvents();
-		// 这一行用于处理窗口事件。例如，当用户移动窗口、调整窗口大小、按下键盘或移动鼠标时，这些事件会被记录到事件队列中。
-		//调用 glfwPollEvents() 函数会处理这些事件并触发相应的回调函数。
 	}
 
 	glfwDestroyWindow(window);
