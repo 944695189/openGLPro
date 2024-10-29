@@ -24,12 +24,9 @@ public:
     std::map<string, int> m_vUniformLocations;
 
     unsigned int ID;
-    // constructor generates the shader on the fly
-    // ------------------------------------------------------------------------
+
     Shader() {}
     void shader(const char* vertexPath, const char* fragmentPath);
-    // activate the shader
-    // ------------------------------------------------------------------------
     void use();
     GLint  GetUniformLocation(const char* name);
     void   SetUniform(const char* name, float x, float y, float z);
@@ -45,7 +42,6 @@ public:
 
     void Unuse();
 private:
-    // utility function for checking shader compilation/linking errors.
-    // ------------------------------------------------------------------------
+
     void checkCompileErrors(unsigned int shader, std::string type);
 };

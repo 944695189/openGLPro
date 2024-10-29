@@ -4,7 +4,6 @@
 #include"Shader.h"
 #include"sky.h"
 using namespace std;
-
 extern vec3 lightPo;
 
 extern vec3 viewPos;
@@ -29,8 +28,7 @@ public:
 	void LoadShader(const char* vsfileName, const char* fsfileName);
 	//const char* vsfile=nullptr, *fsfile=nullptr;
 	Shader prog;
-	//	cgProgram textprog;
-	//cgProgram lihgtprog;
+	//cgProgram textprog;
 	unsigned int vboHandle[3];
 	unsigned int vaoHandle;
 

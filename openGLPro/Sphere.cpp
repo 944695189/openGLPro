@@ -169,8 +169,6 @@ void Sphere::LoadShader(const char* vsfileName, const char* fsfileName)
 void Sphere::Render()
 {
 	//启用需要的shader，可以动态切换不同的shader
-	
-	
 	prog.use();
 	////model在头文件里定义了
 	glm::mat4 model1 = mat4(1.0f);
@@ -184,8 +182,6 @@ void Sphere::Render()
 	prog.SetUniform("ViewMatrix", viewMat);
 	prog .SetUniform("ModelMatrix", model);//ModelMatrix、ViewMatrix和ProjectionMatrix都是在shader中定义的uniform mat4 变量
 	//model更多意义上是初始化作用，将model传给ModelMatrix，ModelMatrix在于shader中获取的的顶点数据等计算
-
-	
 	prog.SetUniform("lightColor", lightcolor);
 	prog.SetUniform("lightPos", lightPo);
 	prog.SetUniform("viewPos", viewPos);

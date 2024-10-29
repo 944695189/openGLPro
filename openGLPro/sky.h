@@ -20,7 +20,6 @@
 class sky
 {
 public:
-
 	sky() {}
 	static GLuint loadTexture(const char *texImagePath);//静态成员函数可通过Utils::loadTexture形式访问
 	static GLuint loadCubeMap(const char *mapDir);

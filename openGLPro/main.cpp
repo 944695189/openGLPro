@@ -118,7 +118,6 @@ void installLights(glm::mat4 vMatrix, GLuint renderingProgram) {
 	glProgramUniform1f(renderingProgram, mshiLoc, matShi);
 }
 
-
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
@@ -169,10 +168,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) {
 	case GLFW_KEY_2:
 		lightPo[0] -= 0.1f;
 		break;
-	default:
-		break;
 	}
-	
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
