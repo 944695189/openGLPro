@@ -285,9 +285,9 @@ void init(GLFWwindow* window) {
 	lightLoc = glm::vec3(0.0f, 5.0f, -30.0f);
 	skyboxTexture = sky::loadCubeMap("asset/cubeMap");
 	sphere.InitData(radius);
-	sphere.LoadShader("shader/tplight.vs", "shader/tplight.fs");
+	sphere.LoadShader("shader/vsplight.glsl", "shader/fsplight.glsl");
 	sphere.SetTexture(sky::loadTexture("asset/Textures/1662781130306.jpeg"));
-	tmodel.initshader("shader/tplight.vs", "shader/tplight.fs");
+	tmodel.initshader("shader/vsplight.glsl", "shader/fsplight.glsl");
 	tmodel.initmodel("asset/AmberDoll/Doll.pmx");
 	glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
 	createReflectRefractBuffers(window);

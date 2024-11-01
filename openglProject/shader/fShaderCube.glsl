@@ -12,4 +12,5 @@ layout (binding = 0) uniform samplerCube samp;
 void main(void)
 {	if ((altitude < .47) && (isAbove == 0)) fragColor = vec4(0,0,.2,1);
 	else fragColor = texture(samp,tc);
+      //实现水上水下不同渲染
 }

@@ -15,10 +15,10 @@ extern vec3 viewPos = glm::vec3(7, 20, 1);
 extern vec3 lightcolor = glm::vec3(1, 1, 1);
 
 extern vec3 Ka = vec3(0.5f, 0.5f, 0.5f);//环境光
-extern vec3 Kd = vec3(0.5f, .5f, .5f);//漫反射光
+extern vec3 Kd = vec3(0.5f, 0.5f, 0.5f);//漫反射光
 extern vec3 Ks = vec3(1.0f, 1.0f, 1.0f);//镜面反射光
 
-extern int shiness = 20;//高光系数
+extern int shiness = 6;//高光系数
 
 Sphere::Sphere(void)
 {
